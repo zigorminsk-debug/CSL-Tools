@@ -1,0 +1,34 @@
+CSL-Tools v1.6.0 - Установка
+
+Вариант 1 - Inno Setup (рекомендуется для клиентов):
+  1. Установите Inno Setup с https://jrsoftware.org/isdl.php
+  2. Запустите build_installer.bat -> получите installer_output/CSL-Tools-Setup-v1.6.0.exe
+  3. Запустите Setup от Администратора
+
+Вариант 2 - Python Installer (self-extracting):
+  Запустите CSL-Tools-Installer.exe от Администратора
+  Он скопирует CSL-Tools.exe в C:\Program Files\CSL-Tools\ и создаст ярлыки
+
+Вариант 3 - PowerShell:
+  PowerShell от Администратора:
+  .\Install-CSLTools.ps1
+  или
+  Set-ExecutionPolicy Bypass -Scope Process
+  .\Install-CSLTools.ps1
+
+Вариант 4 - Ручная:
+  Скопируйте CSL-Tools.exe куда угодно и запускайте от Администратора
+
+Отправка отчетов на admin@csl.by:
+  В программе вкладка "Отчет + Email" -> заполните Организацию и Телефон
+  Нажмите "Отправить на admin@csl.by (SMTP)" - требуется настройка SMTP
+  Или "Открыть в Outlook / Почте" - откроет Outlook с вложением
+
+SMTP настройка:
+  В программе: Отчет -> SMTP -> укажите:
+  SMTP сервер: mail.csl.by (или smtp.yandex.ru, smtp.gmail.com и т.д.)
+  Порт: 587 (TLS) или 465 (SSL)
+  Логин/пароль от вашей почты
+  Сохранить -> Тест отправки
+
+Поддержка: admin@csl.by / +375 29 337 14 12 / csl.by

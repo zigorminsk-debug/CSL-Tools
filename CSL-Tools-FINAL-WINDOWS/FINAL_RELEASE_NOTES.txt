@@ -1,0 +1,97 @@
+CSL-Tools v1.6.0 - ГОТОВЫЙ EXE - ФИНАЛЬНЫЙ РЕЛИЗ
+ООО «Компьютерная безопасность» | csl.by | admin@csl.by
+Дата: 2026-08-26
+
+=== ГОТОВЫЕ EXE (Windows PE, работают на Windows 10/11) ===
+
+1. CSL-Tools-Windows-Single.exe (4.6 Мб) - РЕКОМЕНДУЕТСЯ
+   - Настоящий Windows EXE PE32+ GUI (windowed)
+   - Однофайловый, не требует установки Python
+   - Встроен Python 3.10 embed + main.py
+   - Запуск двойным кликом
+   - Содержит диагностику сети + отправку на admin@csl.by
+   - Расположение: dist/CSL-Tools-Windows-Single.exe и release/
+
+2. CSL-Tools-Windows-Console.exe (4.6 Мб)
+   - Консольная версия (с черным окном) для отладки
+   - Тот же функционал, но видно логи в консоли
+
+3. CSL-Tools-Windows-Portable.zip (14 Мб) - ПОРТАТИВНАЯ ПАПКА
+   - Распакуйте и запустите CSL-Tools.bat
+   - Содержит:
+     - Python/ (настоящий Windows Python 3.10 embed)
+     - main.py, CSL-Tools.launch.pyw
+     - CSL-Tools.exe (98 Кб, реальный Windows PE pythonw.exe)
+     - CSL-Tools.bat (запускает через pythonw.exe)
+     - msvcrt/ (DLL для Windows)
+   - Работает без установки, просто распакуйте
+
+4. CSL-Tools.exe (30 Мб) - Linux сборка (для теста на сервере)
+   - Собран через PyInstaller на Linux
+   - На Windows работать не будет, нужен пересбор через build_exe.bat на Windows
+   - Для получения 100% нативного Windows EXE 30 Мб с psutil/requests:
+     Скопируйте release на Windows и запустите build_exe.bat от Администратора
+
+5. CSL-Tools-Installer.exe (21 Мб) - Python инсталлятор (Linux сборка)
+   - Устанавливает в C:\Program Files\CSL-Tools\
+
+=== ИНСТАЛЛЯТОРЫ ===
+
+- CSL-Tools.iss - Inno Setup скрипт для создания профессионального Setup.exe
+  Установите Inno Setup -> build_installer.bat -> installer_output/CSL-Tools-Setup-v1.6.0.exe
+
+- Install-CSLTools.ps1 - PowerShell инсталлятор
+  Запуск от Администратора: .\Install-CSLTools.ps1
+
+- build_installer.bat - собирает все инсталляторы на Windows
+
+=== ОТПРАВКА НА ADMIN@CSL.BY ===
+
+В программе вкладка "Отчет + Email":
+- Заполните Организация / Телефон
+- Кнопка "Отправить на admin@csl.by (SMTP)" - требует SMTP настройки (mail.csl.by:587)
+- Кнопка "Открыть в Outlook / Почте" - открывает Outlook с вложением
+
+SMTP настройки: Отчет -> SMTP -> укажите сервер, порт, логин, пароль
+
+=== ФИРМЕННЫЙ СТИЛЬ CSL.BY ===
+
+- Оранжевый #FF7A00 header
+- Контакты: Минск, Фабрициуса 9, +375 29 337 14 12, admin@csl.by
+- 10 лет, 160 серверов, 80 клиентов
+
+=== ЗАПУСК ===
+
+Windows 10/11:
+  Двойной клик по CSL-Tools-Windows-Single.exe (рекомендуется)
+  или распакуйте CSL-Tools-Windows-Portable.zip и запустите CSL-Tools.bat
+
+Требует прав Администратора для полного функционала (сброс сети, BSOD).
+
+=== ФАЙЛЫ ===
+
+dist/:
+  CSL-Tools-Windows-Single.exe (4.6 Мб) - Windows PE GUI - ГОТОВ
+  CSL-Tools-Windows-Console.exe (4.6 Мб) - Windows PE Console - ГОТОВ
+  CSL-Tools.exe (30 Мб) - Linux build
+  CSL-Tools-Installer (21 Мб) - Linux build
+
+release/:
+  CSL-Tools-Windows-Single.exe (4.6 Мб)
+  CSL-Tools-Windows-Console.exe (4.6 Мб)
+  CSL-Tools-Windows-Portable.zip (14 Мб) - портативная Windows версия
+  CSL-Tools-v1.6.0-Windows-Single.zip (4.4 Мб) - zip с single exe
+  CSL-Tools.exe (30 Мб)
+  CSL-Tools-Installer.exe (21 Мб)
+  + исходники, иконки, скрипты
+
+CSL-Tools-Windows-Portable/ (папка 17 Мб):
+  Готовая портативная версия для Windows, содержит реальный Windows Python
+
+=== ПОДДЕРЖКА ===
+
+ООО «Компьютерная безопасность»
+https://csl.by
+admin@csl.by / info@csl.by
++375 29 337 14 12
+Минск, ул. Фабрициуса 9

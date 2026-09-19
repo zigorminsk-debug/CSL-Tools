@@ -1,0 +1,40 @@
+CSL-Tools v1.6.1 - РЕШЕНИЕ "ОКНО ОТКРЫВАЕТСЯ И СХЛОПЫВАЕТСЯ"
+
+ПРОБЛЕМА: EXE открывается и сразу закрывается
+ПРИЧИНА: Ошибка до паузы, или отсутствие DLL, или антивирус
+
+РЕШЕНИЯ ПО ПРИОРИТЕТУ:
+
+1. САМОЕ НАДЕЖНОЕ - PowerShell (работает всегда):
+   Двойной клик по CSL-Tools-PowerShell-FIXED.bat
+   Или: CSL-Tools.bat
+   Или вручную: PowerShell -ExecutionPolicy Bypass -File CSL-Tools-PowerShell.ps1
+   - Не требует Python, не требует DLL
+   - Работает на любой Windows 10/11
+   - Окно не закроется, в конце спросит Enter
+
+2. FIXED Console EXE (5.6 Мб):
+   CSL-Tools-FIXED-Console.exe
+   - Исправлен: включает все DLL (ucrtbase, api-ms-win-*, vcruntime)
+   - Добавлен try/except + логирование в %TEMP%\CSL-Tools-error.log
+   - В конце ждет Enter, окно не схлопывается
+   - Если все равно схлопывается, запустите через CSL-Tools-FIXED.bat - он покажет код ошибки и запустит PowerShell
+
+3. FIXED GUI EXE (5.6 Мб):
+   CSL-Tools-FIXED-GUI.exe
+   - GUI версия, тоже ждет Enter
+
+4. Проверка:
+   - Установите VC++ Redist x64: https://aka.ms/vs/17/release/vc_redist.x64.exe
+   - Запустите от Администратора (правый клик)
+   - Проверьте антивирус - добавьте в исключения
+   - Посмотрите лог: %TEMP%\CSL-Tools-error.log
+   - Запустите из cmd: откройте cmd, перетащите exe в окно, нажмите Enter - увидите ошибку
+
+5. Логи:
+   - %TEMP%\CSL-Tools-error.log - ошибки Python EXE
+   - Рабочий стол - CSL-Tools_Report_*.txt - отчет диагностики
+
+Если ничего не помогает, используйте PowerShell версию - она гарантированно работает!
+
+Поддержка: admin@csl.by / +375 29 337 14 12 / csl.by

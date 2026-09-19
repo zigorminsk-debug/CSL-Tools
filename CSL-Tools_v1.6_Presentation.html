@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSL-Tools v1.6.0 - Отправка на admin@csl.by + Инсталлятор</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#F7F7F8;color:#2B2B2B;line-height:1.6}
+  .header{background:#FF7A00;color:white;padding:18px 28px;display:flex;justify-content:space-between;align-items:center}
+  .header h1{font-size:28px}
+  .badge{display:inline-block;background:#FFF0E0;color:#FF7A00;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px}
+  .badge.green{background:#D1FAE5;color:#065F46}
+  .hero{background:white;padding:36px 28px;display:flex;gap:30px;align-items:flex-start;border-bottom:1px solid #E5E7EB}
+  .hero-text h2{font-size:30px;margin-bottom:10px}
+  .hero-text p{color:#6B7280;max-width:650px;margin-bottom:10px}
+  .btn{display:inline-block;background:#FF7A00;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:700;margin:6px 6px 0 0}
+  .btn.green{background:#10B981}
+  .btn.dark{background:#374151}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;padding:28px}
+  .card{background:white;border:1px solid #E5E7EB;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .card h3{font-size:15px;margin-bottom:8px}
+  .card p,.card li{font-size:13px;color:#4B5563}
+  .card ul{margin-left:18px;margin-top:6px}
+  .mockup{background:#1F1F1F;border-radius:12px;overflow:hidden;margin:0 28px 28px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+  .mockup-header{background:#FF7A00;padding:12px 20px;color:white;display:flex;justify-content:space-between;font-size:13px}
+  .mockup-body{display:flex;min-height:520px}
+  .sidebar{width:190px;background:#1A1A1A;color:white;padding:14px}
+  .sidebar div{padding:8px 10px;border-radius:6px;margin-bottom:4px;font-size:13px}
+  .sidebar div.active{background:#FF7A00}
+  .content{flex:1;background:white;padding:16px}
+  .email-box{background:#FFF0E0;border:1px solid #FFD8B0;border-radius:8px;padding:12px;margin-bottom:12px}
+  .status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+  .status{border:1px solid #E5E7EB;border-radius:8px;padding:8px}
+  .status small{color:#6B7280;font-size:10px;font-weight:700}
+  .status b{display:block;font-size:14px}
+  .log{background:#1E1E1E;color:#D4D4D4;padding:10px;border-radius:8px;font-family:Consolas,monospace;font-size:11px;max-height:180px;overflow:auto}
+  .ok{color:#10B981} .warn{color:#F59E0B}
+  .footer{background:#1F1F1F;color:#9CA3AF;padding:22px 28px;font-size:12px;display:flex;justify-content:space-between}
+  code{background:#F3F4F6;padding:2px 6px;border-radius:4px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="header">
+  <div><h1>CSL-TOOLS v1.6.0</h1><div style="font-size:12px;opacity:.9">Сетевая диагностика • ООО «Компьютерная безопасность» • csl.by • admin@csl.by</div></div>
+  <div style="text-align:right;font-size:11px">Минск, Фабрициуса 9<br>+375 29 337 14 12<br>admin@csl.by</div>
+</div>
+
+<div class="hero">
+  <div class="hero-text">
+    <span class="badge">НОВОЕ v1.6.0</span> <span class="badge green">ОТПРАВКА НА ADMIN@CSL.BY</span> <span class="badge green">ИНСТАЛЛЯТОР</span>
+    <h2>Теперь с отправкой отчета и установщиком</h2>
+    <p>Добавил 2 главные фичи по вашему запросу: <b>отправка отчета на admin@csl.by прямо из программы</b> (SMTP + Outlook + mailto) и <b>3 варианта инсталлятора</b> (Inno Setup, Python Installer, PowerShell).</p>
+    <p>Программа переименована в CSL-Tools, стиль csl.by сохранен: оранжевый #FF7A00, белый, темный.</p>
+    <div>
+      <a class="btn" href="#installer">⬇ Инсталляторы</a>
+      <a class="btn green" href="#email">📧 Как отправлять на admin@csl.by</a>
+      <a class="btn dark" href="#files">📦 Файлы релиза</a>
+    </div>
+    <div style="margin-top:14px;font-size:12px;color:#6B7280">
+      <b>Что в 1.6.0:</b> Email config в %APPDATA%\CSL-Tools\email_config.json • Кнопки SMTP/Outlook • Автосохранение temp_reports/ • 3 инсталлятора • Версия 1.6.0
+    </div>
+  </div>
+  <img src="icon.png" style="width:150px;height:150px;border-radius:20px;box-shadow:0 8px 20px rgba(255,122,0,.3)">
+</div>
+
+<div class="mockup">
+  <div class="mockup-header"><b>CSL-Tools v1.6.0 — Отправка на admin@csl.by</b><span>✔ Администратор</span></div>
+  <div class="mockup-body">
+    <div class="sidebar">
+      <div style="font-size:10px;color:#9CA3AF;font-weight:700;margin-bottom:6px">НАВИГАЦИЯ</div>
+      <div>📊 Дашборд</div>
+      <div>🌐 Адаптеры</div>
+      <div>🔒 VPN/Прокси</div>
+      <div>📡 Пинг/Трейс</div>
+      <div>🔍 DNS/DHCP</div>
+      <div>🛠 Исправление</div>
+      <div>💀 BlueScreen</div>
+      <div class="active">📄 Отчет + Email</div>
+    </div>
+    <div class="content">
+      <h3 style="font-size:14px">Итоговый отчет и отправка</h3>
+      <div class="email-box">
+        <div style="font-size:11px;font-weight:700;margin-bottom:6px">Данные для отправки в CSL:</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px">
+          <div>Организация / ФИО: <code>ООО Ромашка</code></div>
+          <div>Телефон: <code>+375 29 123-45-67</code></div>
+          <div>Компьютер: <b>CLIENT-PC</b></div>
+          <div>Отправить на: <b style="color:#FF7A00">admin@csl.by</b></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#374151;color:white;padding:5px 10px;border-radius:6px;font-size:11px">💾 Сохранить отчет</span>
+        <span style="background:#10B981;color:white;padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700">📧 Отправить на admin@csl.by (SMTP)</span>
+        <span style="background:#FF7A00;color:white;padding:5px 10px;border-radius:6px;font-size:11px">📨 Открыть в Outlook / Почте</span>
+        <span style="background:#E5E7EB;padding:5px 10px;border-radius:6px;font-size:11px">⚙ SMTP</span>
+      </div>
+      <div class="status-grid">
+        <div class="status"><small>ИНТЕРНЕТ</small><b class="ok">OK</b></div>
+        <div class="status"><small>DNS</small><b class="ok">4/4</b></div>
+        <div class="status"><small>EMAIL</small><b class="ok">Готов</b></div>
+      </div>
+      <div class="log">
+        === CSL-Tools v1.6.0 Отчет 26.08.2026 ===<br>
+        Клиент: ООО Ромашка | Тел: +375 29 123-45-67 | ПК: CLIENT-PC<br>
+        [1] ИНТЕРНЕТ: ОК | 8.8.8.8:53 TCP OK<br>
+        [3] PROXY: Не найден | VPN: Чисто<br>
+        [5] ПИНГ: 5/5 OK<br>
+        [EMAIL] Отчет отправлен на admin@csl.by через SMTP mail.csl.by:587<br>
+        Отчет подготовлен csl.by | admin@csl.by
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card" id="email">
+    <h3>📧 Отправка на admin@csl.by</h3>
+    <p><b>Способ 1 — SMTP (автоматически):</b></p>
+    <ul>
+      <li>Вкладка Отчет + Email → заполните Организацию/Телефон</li>
+      <li>⚙ SMTP → сервер <code>mail.csl.by</code> порт 587, логин/пароль</li>
+      <li>Сохранить → Тест → 📧 Отправить на admin@csl.by</li>
+      <li>Файл прикрепляется автоматически</li>
+    </ul>
+    <p style="margin-top:8px"><b>Способ 2 — Outlook / Почта (без SMTP):</b></p>
+    <ul>
+      <li>📨 Открыть в Outlook / Почте</li>
+      <li>Открывает Outlook COM с вложением, fallback mailto</li>
+      <li>Файл в <code>temp_reports/</code> — прикрепите вручную если mailto</li>
+    </ul>
+  </div>
+
+  <div class="card" id="installer">
+    <h3>📦 Инсталляторы (3 варианта)</h3>
+    <p><b>1. Inno Setup (профи):</b></p>
+    <ul>
+      <li><code>CSL-Tools.iss</code> — скрипт</li>
+      <li>Требует Inno Setup → <code>iscc CSL-Tools.iss</code></li>
+      <li>Результат: <code>installer_output/CSL-Tools-Setup-v1.6.0.exe</code></li>
+      <li>Мастер установки, ярлыки, деинсталляция, запись в реестр</li>
+    </ul>
+    <p style="margin-top:8px"><b>2. Python Installer:</b></p>
+    <ul>
+      <li><code>CSL-Tools-Installer.exe</code> — self-extracting</li>
+      <li>Копирует в <code>C:\Program Files\CSL-Tools\</code></li>
+      <li>Ярлыки Desktop + Start Menu, запрос данных клиента</li>
+    </ul>
+    <p style="margin-top:8px"><b>3. PowerShell:</b></p>
+    <ul>
+      <li><code>Install-CSLTools.ps1</code></li>
+      <li>Запуск от Админа: <code>.\Install-CSLTools.ps1</code></li>
+    </ul>
+  </div>
+
+  <div class="card" id="files">
+    <h3>📁 Файлы релиза v1.6.0</h3>
+    <ul>
+      <li><b>CSL-Tools.exe</b> (30 Мб) — основная программа с email</li>
+      <li><b>CSL-Tools-Installer.exe</b> (21 Мб) — Python инсталлятор</li>
+      <li><b>CSL-Tools-Setup-v1.6.0.exe</b> — Inno Setup (собирается на Windows)</li>
+      <li><b>Install-CSLTools.ps1</b> — PowerShell установщик</li>
+      <li><b>main.py</b> (69 Кб) — исходник с отправкой на admin@csl.by</li>
+      <li><b>installer.py</b> — исходник инсталлятора</li>
+      <li><b>CSL-Tools.iss</b> — Inno Setup скрипт</li>
+      <li><b>build_installer.bat</b> — сборка всего</li>
+      <li><b>icon.ico/png, LICENSE.txt, README.md, INSTALL.txt</b></li>
+    </ul>
+    <p style="margin-top:8px;font-size:11px;color:#6B7280">Для нативного Windows EXE: скопируйте release на Windows и запустите build_installer.bat от Админа. Получите 3 инсталлятора.</p>
+  </div>
+</div>
+
+<div style="padding:0 28px 28px">
+  <div class="card">
+    <h3>⚙ SMTP — примеры настроек</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px">
+      <div><b>csl.by:</b><br><code>mail.csl.by:587 TLS<br>user: support@csl.by</code></div>
+      <div><b>Yandex:</b><br><code>smtp.yandex.ru:465 SSL<br>или 587 TLS</code></div>
+      <div><b>Gmail:</b><br><code>smtp.gmail.com:587 TLS<br>нужен App Password</code></div>
+      <div><b>Office365:</b><br><code>smtp.office365.com:587 TLS</code></div>
+    </div>
+    <p style="margin-top:10px;font-size:12px">Конфиг: <code>%APPDATA%\CSL-Tools\email_config.json</code> — сохраняется после первой настройки. Поле to_email по умолчанию <code>admin@csl.by</code></p>
+  </div>
+</div>
+
+<div class="footer">
+  <div>© 2026 CSL-Tools v1.6.0 • ООО «Компьютерная безопасность» • csl.by<br>10 лет • 160 серверов • 80 клиентов • Мгновенная помощь • admin@csl.by</div>
+  <div style="text-align:right">Минск, Фабрициуса 9<br>+375 29 337 14 12<br>admin@csl.by / info@csl.by</div>
+</div>
+</body>
+</html>

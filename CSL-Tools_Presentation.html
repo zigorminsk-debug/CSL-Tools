@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSL-Tools - Презентация</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:#F7F7F8;color:#2B2B2B;line-height:1.6}
+  .header{background:#FF7A00;color:white;padding:18px 28px;display:flex;justify-content:space-between;align-items:center}
+  .header h1{font-size:28px;letter-spacing:1px}
+  .header .sub{font-size:13px;opacity:.9}
+  .contacts{font-size:11px;text-align:right;line-height:1.4}
+  .hero{background:white;padding:40px 28px;display:flex;gap:30px;align-items:center;border-bottom:1px solid #E5E7EB}
+  .hero-text h2{font-size:32px;margin-bottom:10px}
+  .hero-text p{color:#6B7280;max-width:600px}
+  .badge{display:inline-block;background:#FFF0E0;color:#FF7A00;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:12px}
+  .btn{display:inline-block;background:#FF7A00;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:16px}
+  .btn:hover{background:#E56E00}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;padding:28px}
+  .card{background:white;border:1px solid #E5E7EB;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .card h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .card p{font-size:13px;color:#6B7280}
+  .card .icon{font-size:22px}
+  .mockup{background:#1F1F1F;border-radius:12px;overflow:hidden;margin:28px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+  .mockup-header{background:#FF7A00;padding:12px 20px;color:white;display:flex;justify-content:space-between}
+  .mockup-body{display:flex;min-height:420px}
+  .sidebar{width:180px;background:#1A1A1A;color:white;padding:14px}
+  .sidebar div{padding:8px 10px;border-radius:6px;margin-bottom:4px;font-size:13px;cursor:pointer}
+  .sidebar div.active{background:#FF7A00}
+  .content{flex:1;background:white;padding:18px}
+  .status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+  .status{border:1px solid #E5E7EB;border-radius:8px;padding:10px}
+  .status small{color:#6B7280;font-size:11px;font-weight:700}
+  .status b{display:block;font-size:16px;margin-top:4px}
+  .log{background:#1E1E1E;color:#D4D4D4;padding:12px;border-radius:8px;font-family:Consolas,monospace;font-size:12px;line-height:1.5;max-height:200px;overflow:auto}
+  .footer{background:#1F1F1F;color:#9CA3AF;padding:24px 28px;font-size:12px;display:flex;justify-content:space-between}
+  .ok{color:#10B981} .warn{color:#F59E0B} .err{color:#EF4444}
+</style>
+</head>
+<body>
+<div class="header">
+  <div>
+    <h1>CSL-TOOLS</h1>
+    <div class="sub">Сетевая диагностика • ООО «Компьютерная безопасность» • csl.by</div>
+  </div>
+  <div class="contacts">
+    г. Минск, ул. Фабрициуса 9<br>
+    +375 29 337 14 12 | info@csl.by<br>
+    Пн-Пт 9:00-17:00
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-text">
+    <span class="badge">ВЕРСИЯ 1.5.0 • НОВОЕ</span>
+    <h2>Программа переименована в CSL-Tools</h2>
+    <p>Фирменная утилита в стиле csl.by для полной диагностики сети. Проверяет адаптеры, VPN/прокси, пинг, DNS/DHCP, интернет, читает BlueScreen и автоматически исправляет ошибки. Сброс сети в 1 клик.</p>
+    <a class="btn" href="#download">⬇ Скачать EXE</a>
+    <div style="margin-top:12px;font-size:12px;color:#6B7280">Требует Windows 10/11 • Запуск от Администратора для полного функционала</div>
+  </div>
+  <img src="icon.png" style="width:160px;height:160px;border-radius:20px;box-shadow:0 8px 20px rgba(255,122,0,.3)">
+</div>
+
+<div class="mockup">
+  <div class="mockup-header">
+    <b>CSL-Tools v1.5.0 — ООО «Компьютерная безопасность» | csl.by</b>
+    <span>✔ Администратор</span>
+  </div>
+  <div class="mockup-body">
+    <div class="sidebar">
+      <div style="font-size:10px;color:#9CA3AF;font-weight:700;margin-bottom:6px">НАВИГАЦИЯ</div>
+      <div class="active">📊 Дашборд</div>
+      <div>🌐 Адаптеры</div>
+      <div>🔒 VPN/Прокси</div>
+      <div>📡 Пинг/Трейс</div>
+      <div>🔍 DNS/DHCP</div>
+      <div>🛠 Исправление</div>
+      <div>💀 BlueScreen</div>
+      <div>📄 Отчет</div>
+    </div>
+    <div class="content">
+      <h3>Авто-диагностика сети</h3>
+      <div style="display:flex;gap:8px;margin:10px 0">
+        <span style="background:#FF7A00;color:white;padding:6px 14px;border-radius:6px;font-size:12px;font-weight:700">▶ Запустить полную диагностику</span>
+        <span style="background:#374151;color:white;padding:6px 12px;border-radius:6px;font-size:12px">💾 Сохранить отчет</span>
+      </div>
+      <div class="status-grid">
+        <div class="status"><small>ИНТЕРНЕТ</small><b class="ok">OK</b></div>
+        <div class="status"><small>АДАПТЕРЫ</small><b class="ok">OK</b></div>
+        <div class="status"><small>VPN/ПРОКСИ</small><b class="warn">Прокси!</b></div>
+        <div class="status"><small>DNS/DHCP</small><b class="ok">4/4</b></div>
+        <div class="status"><small>ПИНГ</small><b class="ok">5/5 OK</b></div>
+        <div class="status"><small>BSOD</small><b class="ok">Чисто</b></div>
+      </div>
+      <div class="log">
+        === CSL-Tools v1.5.0 Авто-диагностика запущена ===<br>
+        OS: Windows 11 | Hostname: CLIENT-PC<br>
+        [1] ИНТЕРНЕТ: ОК<br>
+        &nbsp;&nbsp;8.8.8.8:53 TCP: OK<br>
+        &nbsp;&nbsp;https://csl.by: OK HTTP 200<br>
+        [2] АДАПТЕРЫ: Intel(R) Ethernet UP 1 Gbps<br>
+        [3] VPN: Не найден | PROXY: ProxyEnable=1 [!]<br>
+        [4] DNS: 192.168.1.1, 8.8.8.8 | google.com: OK -> 142.250.x.x<br>
+        [5] ПИНГ: 8.8.8.8 OK 12ms | csl.by OK 18ms<br>
+        [6] BSOD: Дампов 0, чисто<br>
+        РЕКОМЕНДАЦИИ: Отключите прокси если не нужен<br>
+        Отчет подготовлен csl.by | +375 29 337 14 12
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="card"><h3><span class="icon">🌐</span> Сетевые карты</h3><p>ipconfig /all, Get-NetAdapter, netsh, psutil. IP, маска, шлюз, DHCP, скорость, статус UP/DOWN.</p></div>
+  <div class="card"><h3><span class="icon">🔒</span> VPN / Прокси</h3><p>Поиск TAP/TUN/WireGuard/OpenVPN/Nord. Проверка реестра ProxyEnable, ProxyServer, PAC, netsh winhttp.</p></div>
+  <div class="card"><h3><span class="icon">📡</span> Пинг / Трассировка</h3><p>Пинг 8.8.8.8, 1.1.1.1, google.com, csl.by. Трассировка tracert -d -h 20. Подсветка потерь.</p></div>
+  <div class="card"><h3><span class="icon">🔍</span> DNS / DHCP / Интернет</h3><p>DNS сервера, nslookup, резолв 4 доменов, проверка TCP 53 и HTTPS. DHCP enabled.</p></div>
+  <div class="card"><h3><span class="icon">🛠</span> Исправление ошибок</h3><p>flushdns, release/renew, winsock reset, int ip reset, advfirewall reset, отключение прокси, рестарт адаптера, полный сброс.</p></div>
+  <div class="card"><h3><span class="icon">💀</span> BlueScreen</h3><p>Чтение C:\Windows\Minidump, MEMORY.DMP, журнал BugCheck 1001/41, CrashControl. Вывод даты и причин.</p></div>
+</div>
+
+<div style="padding:0 28px 28px">
+  <div class="card" id="download">
+    <h3>📦 Что в архиве</h3>
+    <p style="margin:10px 0">Готовый релиз лежит в папке <b>release/</b> и <b>dist/</b>:</p>
+    <ul style="margin-left:18px;font-size:13px;color:#374151">
+      <li><b>CSL-Tools.exe</b> — готовая программа (собрана на Linux, для нативной Windows сборки запустите build_exe.bat на Windows)</li>
+      <li><b>main.py</b> — исходник, можно запускать напрямую: python main.py</li>
+      <li><b>build_exe.bat</b> — двойной клик на Windows соберет настоящий Windows EXE</li>
+      <li><b>icon.ico / icon.png</b> — иконка в стиле csl.by</li>
+      <li><b>README.md</b> — документация</li>
+    </ul>
+    <p style="margin-top:14px;font-size:13px">Для 100% Windows EXE: скопируйте папку на Windows ПК, установите Python 3.10+, запустите build_exe.bat от Администратора. Получите dist/CSL-Tools.exe 30 Мб.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <div>© 2026 CSL-Tools • ООО «Компьютерная безопасность» • csl.by<br>10 лет • 160 серверов • 80 клиентов • Мгновенная помощь</div>
+  <div style="text-align:right">Минск, Фабрициуса 9<br>+375 29 337 14 12<br>info@csl.by</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+CSL-Tools v1.6.0 - ГОТОВЫЙ EXE - КАК ЗАПУСТИТЬ
+
+ЕСЛИ EXE НЕ ЗАПУСКАЮТСЯ, ИСПОЛЬЗУЙТЕ ГАРАНТИРОВАННЫЙ СПОСОБ:
+
+1. ГАРАНТИРОВАННЫЙ (работает всегда, без Python):
+   Двойной клик по CSL-Tools.bat
+   - Запустит PowerShell диагностику
+   - Работает на любой Windows 10/11 без установки
+   - Требует прав Администратора для полного функционала
+
+   Или напрямую:
+   PowerShell -ExecutionPolicy Bypass -File CSL-Tools-PowerShell.ps1
+
+2. CONSOLE FIXED EXE (5.6 Мб):
+   CSL-Tools-Console-Fixed.exe
+   - Настоящий Windows PE EXE, включает все DLL
+   - Консольная версия, показывает логи
+   - Работает без Python, без tkinter
+   - Если не запускается, установите Visual C++ Redistributable 2015-2022
+
+3. GUI FIXED EXE (5.6 Мб):
+   CSL-Tools-GUI-Fixed.exe
+   - GUI версия, но fallback в консоль если нет tkinter
+   - Требует Windows 10/11
+
+4. SINGLE EXE (4.6 Мб):
+   CSL-Tools-Windows-Single.exe
+   - Старая версия single exe, может требовать DLL
+
+ЕСЛИ ВСЕ РАВНО НЕ ЗАПУСКАЕТСЯ:
+- Установите Visual C++ Redistributable: https://aka.ms/vs/17/release/vc_redist.x64.exe
+- Запустите от имени Администратора
+- Проверьте антивирус (добавьте в исключения)
+- Используйте CSL-Tools.bat - он работает всегда!
+
+ОТПРАВКА ОТЧЕТА НА admin@csl.by:
+- PowerShell версия автоматически предложит отправить через Outlook/mailto
+- Отчет сохраняется на Рабочем столе
+
+Поддержка: admin@csl.by / +375 29 337 14 12 / csl.by
